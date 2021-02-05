@@ -12,22 +12,22 @@ namespace DataAccess.Concrete.EntitiyFramework
     //NuGet
     public class EfProductDal : IProductDal
     {
-        public void Add(Product entitiy)
+        public void Add(Product entity)
         {
             // IDisposable pattern implementation of C#
             using (NorthwindContext context = new NorthwindContext())
             {
-                var addedEntity = context.Entry(entitiy); // veri kaynağı ile ilişkilendirildi
+                var addedEntity = context.Entry(entity); // veri kaynağı ile ilişkilendirildi
                 addedEntity.State = EntityState.Added; // ekle
                 context.SaveChanges(); // değişiklikleri kaydet
             }
         }
 
-        public void Delete(Product entitiy)
+        public void Delete(Product entity)
         {
             using (NorthwindContext context = new NorthwindContext())
             {
-                var deletedEntity = context.Entry(entitiy); 
+                var deletedEntity = context.Entry(entity); 
                 deletedEntity.State = EntityState.Deleted; 
                 context.SaveChanges(); 
             }
@@ -51,11 +51,11 @@ namespace DataAccess.Concrete.EntitiyFramework
             }
         }
 
-        public void Update(Product entitiy)
+        public void Update(Product entity)
         {
             using (NorthwindContext context = new NorthwindContext())
             {
-                var updatedEntity = context.Entry(entitiy);
+                var updatedEntity = context.Entry(entity);
                 updatedEntity.State = EntityState.Modified;
                 context.SaveChanges();
             }

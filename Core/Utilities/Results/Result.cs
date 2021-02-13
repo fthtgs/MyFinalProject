@@ -19,7 +19,7 @@ namespace Core.Utilities.Results
 
         public bool Success { get; }
 
-        public string Message { get; }  // 'get' -readonly- bir yapıdır ve sadece constructor'da set edilebilir.3
+        public string Message { get; }  // 'get' -readonly- bir yapıdır ve sadece constructor'da set edilebilir.
                                         // Bu şekilde yaparak kodları kısıtlayarak standardize etmiş olduk.
     }
 }

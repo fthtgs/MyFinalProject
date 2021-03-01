@@ -15,5 +15,6 @@ namespace Business.Abstract
         IDataResult<List<ProductDetailDto>> GetProductDetails();    // T -> List<ProductDetailDto>
         IDataResult<Product> GetById(int productId);    // T -> Product
         IResult Add(Product product);
+        IResult Update(Product product);
     }
 }
